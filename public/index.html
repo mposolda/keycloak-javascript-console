@@ -146,7 +146,8 @@
   var keycloak = new Keycloak({
     url: "http://localhost:8180",
     realm: "demo",
-    clientId: "js-console"
+    clientId: "js-console",
+//    oidcProvider: "http://localhost:8180/realms/demo"
   });
 
   keycloak.onAuthSuccess = function () {
@@ -187,7 +188,9 @@
   // Flow can be changed to 'implicit' or 'hybrid', but then client must enable implicit flow in admin console too
   var initOptions = {
       responseMode: 'fragment',
-      flow: 'standard'
+      flow: 'standard',
+//      omitWellKnownConfigRequest: true,
+//      useDeprecatedRegisterEndpoint: true
   };
 
 
